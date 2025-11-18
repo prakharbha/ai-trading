@@ -11,7 +11,7 @@ Real-time order book and trades for BTC/USDT using Binance WebSocket streams.
 
 ## Tech Stack
 
-- React 18 + TypeScript
+- React 19 + TypeScript
 - Vite
 - React Router
 - Tailwind CSS
