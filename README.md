@@ -1,16 +1,64 @@
 # AI Trading
 
-An AI-powered trading platform.
+Real-time order book and trades for BTC/USDT using Binance WebSocket streams.
 
-## Overview
+## Features
 
-This project implements an AI trading system that leverages machine learning algorithms to analyze market data and execute trading strategies.
+- Live order book with depth visualization
+- Real-time trade feed
+- WebSocket connections persist across routes
+- Binance dark theme styling
 
-## Getting Started
+## Tech Stack
 
-More documentation coming soon.
+- React 18 + TypeScript
+- Vite
+- React Router
+- Tailwind CSS
+- Binance WebSocket API
 
-## License
+## Setup
 
-TBD
+```bash
+npm install
+npm run dev
+```
 
+Runs on `http://localhost:5173`
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── OrderBook.tsx
+│   └── Trades.tsx
+├── context/
+│   └── BinanceWebSocketContext.tsx
+├── types/
+│   └── binance.ts
+├── App.tsx
+├── main.tsx
+└── index.css
+```
+
+## Routes
+
+- `/book` - Order book
+- `/trade` - Recent trades
+
+## WebSocket Streams
+
+Connects to two Binance streams:
+
+1. Partial Book Depth (`@depth20@100ms`) - top 20 bids/asks, updates every 100ms
+2. Aggregate Trades (`@aggTrade`) - live trade executions
+
+WebSocket state is managed at the app level, so connections stay alive when navigating between routes.
