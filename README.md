@@ -24,7 +24,7 @@ npm install
 npm run dev
 ```
 
-Runs on `http://localhost:5173`
+The dev server will start on `http://localhost:5173` (or next available port if 5173 is busy)
 
 ## Build
 
